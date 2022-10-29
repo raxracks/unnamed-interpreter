@@ -7,6 +7,9 @@ let stack = [];
 let i = 0;
 let retI = [Infinity];
 
+//
+// Parameter Functions
+//
 function getsym() {
   return symbols[code[++i]];
 }
@@ -15,14 +18,22 @@ function getstack() {
   return stack;
 }
 
+function len() {
+  return parseParam(++i).length;
+}
+
+function idx() {
+  return parseParam(++i)[parseParam(++i)];
+}
+
 function stacktop() {
   return stack[stack.length - 1];
 }
 
+const paramFunctions = { getsym, getstack, len, idx, stacktop };
+
 function parseParam() {
-  if (code[i] === "getsym") return getsym();
-  else if (code[i] === "getstack") return getstack();
-  else if (code[i] === "stacktop") return stacktop();
+  if (paramFunctions[code[i]]) return paramFunctions[code[i]]();
   else return code[i];
 }
 
