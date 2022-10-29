@@ -40,4 +40,4 @@ node interpreter.js examples/hello.asm
 | mod | | | | Modulus of 2 values | Pops 2 items off the stack and modulos them
 | pow | | | | Power of 2 values | Pops 2 items off the stack and exponents (great english) them
 | inc | | | | Incremented value | Pops item off stack and increments it
-| inc | | | | Decremented value | Pops item off stack and decrements it
+| dec | | | | Decremented value | Pops item off stack and decrements it
